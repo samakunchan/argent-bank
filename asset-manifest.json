@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/argent-bank/static/css/main.9c824f69.css",
-    "main.js": "/argent-bank/static/js/main.7756252e.js",
+    "main.css": "/argent-bank/static/css/main.7d0ccfe0.css",
+    "main.js": "/argent-bank/static/js/main.0ca50bbf.js",
     "static/js/453.c8cda062.chunk.js": "/argent-bank/static/js/453.c8cda062.chunk.js",
-    "static/media/logo.svg": "/argent-bank/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/bank-tree.jpeg": "/argent-bank/static/media/bank-tree.4d59987c7c62b024b014.jpeg",
     "index.html": "/argent-bank/index.html",
-    "main.9c824f69.css.map": "/argent-bank/static/css/main.9c824f69.css.map",
-    "main.7756252e.js.map": "/argent-bank/static/js/main.7756252e.js.map",
+    "main.7d0ccfe0.css.map": "/argent-bank/static/css/main.7d0ccfe0.css.map",
+    "main.0ca50bbf.js.map": "/argent-bank/static/js/main.0ca50bbf.js.map",
     "453.c8cda062.chunk.js.map": "/argent-bank/static/js/453.c8cda062.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c824f69.css",
-    "static/js/main.7756252e.js"
+    "static/css/main.7d0ccfe0.css",
+    "static/js/main.0ca50bbf.js"
   ]
 }
