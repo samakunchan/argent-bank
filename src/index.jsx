@@ -1,6 +1,7 @@
 import './index.scss';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
@@ -11,6 +12,7 @@ root.render(
     <Router basename={'/argent-bank'}>
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/sign-in' element={<LoginPage />} />
       </Routes>
     </Router>
   </>,
