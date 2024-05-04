@@ -1,11 +1,12 @@
 @use "../abstracts";
 
-body {
+#root {
   font-family: abstracts.$fontAvenir;
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-style: normal;
+  text-align: center;
+  color: abstracts.$secondary;
 }
 
 code {
@@ -15,14 +16,13 @@ code {
 .main-nav {
   a {
     font-weight: bold;
-    color: #2c3e50;
+  }
+  .main-nav-item {
+    text-decoration: none;
+    margin-right: 0.5rem;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
-.main-nav-item {
-  text-decoration: none;
-  margin-right: 0.5rem;
-  &:hover {
-    text-decoration: underline;
-  }
-}

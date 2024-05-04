@@ -2,16 +2,18 @@
 
 body {
   margin: 0;
-  font-weight: abstracts.$fontWeight500;
 }
 
 .bg-dark {
-  background-color: abstracts.$secondary;
+  background-color: abstracts.$dark;
 }
 
 .main-nav {
-  a.router-link-exact-active {
-    color: abstracts.$primary;
+  a {
+    color: abstracts.$secondary;
+    &.router-link-exact-active {
+      color: abstracts.$primary;
+    }
   }
 }
 
