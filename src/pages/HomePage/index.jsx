@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
       <nav className='main-nav'>
-        <Link to={'/'} className={'main-nav-logo-image'}>
+        <Link to={'/'} className={'main-nav-logo'}>
           <img
             className='main-nav-logo-image'
             src='/argent-bank/assets/images/argentBankLogo.png'
