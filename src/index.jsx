@@ -1,6 +1,7 @@
 import './index.scss';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import LayoutComponent from './components/layout/LayoutComponent';
 import LoginPage from './pages/LoginPage';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -9,11 +10,14 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Router basename={'/argent-bank'}>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/sign-in' element={<LoginPage />} />
-      </Routes>
+    <Router>
+      {/*<Router basename={'/argent-bank'}>*/}
+      <LayoutComponent>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/sign-in' element={<LoginPage />} />
+        </Routes>
+      </LayoutComponent>
     </Router>
   </>,
 );
