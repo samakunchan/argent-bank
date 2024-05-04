@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Router>
+    <Router basename={'/argent-bank'}>
       <Routes>
         <Route path='/' element={<HomePage />} />
       </Routes>
