@@ -23,3 +23,12 @@ Site Internet pour une banque fictifs. Le but est de :
 ## Test
 
 Voir les rôles pour les tests ici : https://www.w3.org/TR/html-aria/#docconformance
+
+
+## Build local
+
+T'inquiète, je n'installe pas `serve` en global, mais uniquement par projet.
+
+```shell
+yarn build && serve -s build -l 4005
+```
