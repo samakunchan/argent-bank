@@ -66,7 +66,7 @@
 
 .feature-icon {
   width: 100px;
-  border: 10px solid #00bc77;
+  border: 10px solid abstracts.$primary;
   border-radius: 50%;
   padding: 1rem;
 }
@@ -90,8 +90,8 @@
   font-size: 1.1rem;
   font-weight: bold;
   margin-top: 1rem;
-  border-color: #00bc77;
-  background-color: #00bc77;
+  border-color: abstracts.$primary;
+  background-color: abstracts.$primary;
   color: #fff;
 }
 
@@ -171,8 +171,8 @@
 }
 
 .edit-button {
-  border-color: #00bc77;
-  background-color: #00bc77;
+  border-color: abstracts.$primary;
+  background-color: abstracts.$primary;
   color: #fff;
   font-weight: bold;
   padding: 10px;
@@ -190,8 +190,8 @@
   font-size: 1.1rem;
   font-weight: bold;
   margin-top: 1rem;
-  border-color: #00bc77;
-  background-color: #00bc77;
+  border-color: abstracts.$primary;
+  background-color: abstracts.$primary;
   color: #fff;
 }
 
