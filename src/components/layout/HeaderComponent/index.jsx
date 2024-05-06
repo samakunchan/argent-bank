@@ -13,6 +13,8 @@ const HeaderComponent = () => {
       metaThemeColor.content = '#12002b';
     }
   }, []);
+  const isProdGithubPages = process.env.REACT_APP_ENV === 'gh-pages' ? `/argent-bank` : ``;
+  const basePath = isProdGithubPages ? `/argent-bank` : ``;
   const isConnected = true;
 
   return (
@@ -20,7 +22,7 @@ const HeaderComponent = () => {
       <Link to={'/'} className={'main-nav-logo'}>
         <img
           className='main-nav-logo-image'
-          src='/assets/images/argentBankLogo.png'
+          src={`${basePath}/assets/images/argentBankLogo.png`}
           alt='Argent Bank Logo'
         />
         <h1 className='sr-only'>Argent Bank</h1>
