@@ -11,8 +11,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    {/*<Router>*/}
-    <Router basename={'/argent-bank'}>
+    <Router basename={process.env.REACT_APP_ENV === 'gh-pages' ? `/argent-bank` : ``}>
       <LayoutComponent>
         <Routes>
           <Route path='/' element={<HomePage />} />

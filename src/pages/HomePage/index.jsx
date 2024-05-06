@@ -1,6 +1,8 @@
 import './index.scss';
 
 const HomePage = () => {
+  const isProdGithubPages = process.env.REACT_APP_ENV === 'gh-pages' ? `/argent-bank` : ``;
+  const basePath = isProdGithubPages ? `/argent-bank` : ``;
   return (
     <main>
       <div className='hero'>
@@ -15,7 +17,11 @@ const HomePage = () => {
       <section className='features'>
         <h2 className='sr-only'>Features</h2>
         <div className='feature-item'>
-          <img src='/assets/images/icon-chat.png' alt='Chat Icon' className='feature-icon' />
+          <img
+            src={`${basePath}/assets/images/icon-chat.png`}
+            alt='Chat Icon'
+            className='feature-icon'
+          />
           <h3 className='feature-item-title'>You are our #1 priority</h3>
           <p>
             Need to talk to a representative? You can get in touch through our 24/7 chat or through
@@ -23,12 +29,20 @@ const HomePage = () => {
           </p>
         </div>
         <div className='feature-item'>
-          <img src='/assets/images/icon-money.png' alt='Chat Icon' className='feature-icon' />
+          <img
+            src={`${basePath}/assets/images/icon-money.png`}
+            alt='Chat Icon'
+            className='feature-icon'
+          />
           <h3 className='feature-item-title'>More savings means higher rates</h3>
           <p>The more you save with us, the higher your interest rate will be!</p>
         </div>
         <div className='feature-item'>
-          <img src='/assets/images/icon-security.png' alt='Chat Icon' className='feature-icon' />
+          <img
+            src={`${basePath}/assets/images/icon-security.png`}
+            alt='Chat Icon'
+            className='feature-icon'
+          />
           <h3 className='feature-item-title'>Security you can trust</h3>
           <p>We use top of the line encryption to make sure your data and money is always safe.</p>
         </div>
