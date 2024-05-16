@@ -1,7 +1,7 @@
 import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import { RouteName, Theme } from '../../../core/utils/utils';
 import { disconnectUser, removeTokenToLocalStorage } from '../../../core/features/auth/auth-slice';
-import { RouteName } from '../../../core/utils/utils';
 import { initiateBackUser } from '../../../core/features/profile/profile-slice';
 import { useDispatch } from 'react-redux';
 
@@ -15,9 +15,13 @@ const UserConnectedComponent = ({ user }) => {
     navigate(RouteName.signIn);
   };
 
+  const changeThemeColor = () => {
+    Theme.changeThemeColor(Theme.secondary);
+  };
+
   return (
     <div>
-      <Link to={RouteName.dashboard} className={'main-nav-item'}>
+      <Link to={RouteName.dashboard} className={'main-nav-item'} onClick={changeThemeColor}>
         <i className='fa fa-user-circle'></i>
         <span>{user.firstName}</span>
       </Link>

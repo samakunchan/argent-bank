@@ -54,3 +54,28 @@ export class ApiPath {
    */
   static endPointProfile = 'user/profile';
 }
+
+export class Theme {
+  /**
+   * color: #085835
+   * @type {string}
+   */
+  static primary = '#085835';
+
+  /**
+   * color: #12002b
+   * @type {string}
+   */
+  static secondary = '#12002b';
+
+  /**
+   * Change la couleur du thème
+   * @param newColor
+   */
+  static changeThemeColor(newColor) {
+    const metaTag = document.querySelector('meta[name="theme-color"]');
+    if (metaTag) {
+      metaTag.content = newColor;
+    }
+  }
+}

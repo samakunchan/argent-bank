@@ -1,8 +1,8 @@
 import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import { RouteName, Theme } from '../../../core/utils/utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { RouteName } from '../../../core/utils/utils';
 import { authenticateUser } from '../../../core/features/auth/auth-slice';
 import { selectUserIsConnected } from '../../../core/features/profile/profile-selector';
 
@@ -26,6 +26,7 @@ const LoginPage = () => {
     await dispatch(authenticateUser({ email: formData.username, password: formData.password }));
     setFormData(initialState);
     if (isConnected) {
+      Theme.changeThemeColor(Theme.secondary);
       navigate(RouteName.dashboard);
     }
   };
