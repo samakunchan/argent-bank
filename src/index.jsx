@@ -1,9 +1,10 @@
 import './index.scss';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import DashboardPage from './pages/DashboardPage';
-import HomePage from './pages/HomePage';
+import DashboardPage from './pages/private-pages/DashboardPage';
+import ErrorPage from './pages/public-pages/ErrorPage';
+import HomePage from './pages/public-pages/HomePage';
 import LayoutComponent from './components/layout/LayoutComponent';
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/public-pages/LoginPage';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom/client';

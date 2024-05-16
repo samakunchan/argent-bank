@@ -1,7 +1,7 @@
-@use "src/styles/abstracts";
+@use "../../../styles/abstracts";
 
 .hero {
-  background-image: url(../../../public/assets/images/bank-tree.jpeg);
+  background-image: url(../../../../public/assets/images/bank-tree.jpeg);
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
