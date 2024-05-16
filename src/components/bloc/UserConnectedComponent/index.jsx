@@ -1,17 +1,31 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { disconnectUser, removeTokenToLocalStorage } from '../../../core/features/auth/auth-slice';
+import { RouteName } from '../../../core/utils/utils';
+import { initiateBackUser } from '../../../core/features/profile/profile-slice';
+import { useDispatch } from 'react-redux';
 
 const UserConnectedComponent = ({ user }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const signOut = async () => {
+    await dispatch(disconnectUser({ user }));
+    await dispatch(initiateBackUser());
+    await dispatch(removeTokenToLocalStorage());
+    navigate(RouteName.signIn);
+  };
+
   return (
     <div>
-      <Link to={'/dashboard/user'} className={'main-nav-item'}>
+      <Link to={RouteName.dashboard} className={'main-nav-item'}>
         <i className='fa fa-user-circle'></i>
-        <span>{user[`firstname`]}</span>
+        <span>{user.firstName}</span>
       </Link>
-      <Link to={'/sign-in'} className={'main-nav-item'}>
+
+      <span className={'main-nav-item btn'} onClick={signOut}>
         <i className='fa fa-sign-out'></i>
         <span>Sign Out</span>
-      </Link>
+      </span>
     </div>
   );
 };

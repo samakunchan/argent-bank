@@ -1,8 +1,14 @@
 import './index.scss';
+import {
+  selectInfosUser,
+  selectUserIsConnected,
+} from '../../../core/features/profile/profile-selector';
 import AuthenticationComponent from '../../bloc/AuthenticationComponent';
 import { Link } from 'react-router-dom';
+import { RouteName } from '../../../core/utils/utils';
 import UserConnectedComponent from '../../bloc/UserConnectedComponent';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const HeaderComponent = () => {
   useEffect(() => {
@@ -13,22 +19,22 @@ const HeaderComponent = () => {
       metaThemeColor.content = '#12002b';
     }
   }, []);
-  const isProdGithubPages = process.env.REACT_APP_ENV === 'gh-pages' ? `/argent-bank` : ``;
-  const basePath = isProdGithubPages ? `/argent-bank` : ``;
-  const isConnected = true;
+
+  const profileUser = useSelector(selectInfosUser);
+  const isConnected = useSelector(selectUserIsConnected);
 
   return (
     <nav className='main-nav'>
-      <Link to={'/'} className={'main-nav-logo'}>
+      <Link to={RouteName.home} className={'main-nav-logo'}>
         <img
           className='main-nav-logo-image'
-          src={`${basePath}/assets/images/argentBankLogo.png`}
+          src={`${RouteName.basePath}/assets/images/argentBankLogo.png`}
           alt='Argent Bank Logo'
         />
         <h1 className='sr-only'>Argent Bank</h1>
       </Link>
       {isConnected ? (
-        <UserConnectedComponent user={{ firstname: `Tony` }} />
+        <UserConnectedComponent user={{ id: profileUser.id, firstName: profileUser.firstName }} />
       ) : (
         <AuthenticationComponent />
       )}
