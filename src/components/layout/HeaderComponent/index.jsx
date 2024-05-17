@@ -1,34 +1,43 @@
 import './index.scss';
+import { RouteName, Theme } from '../../../core/utils/utils';
+import {
+  selectInfosUser,
+  selectUserIsConnected,
+} from '../../../core/features/profile/profile-selector';
 import AuthenticationComponent from '../../bloc/AuthenticationComponent';
 import { Link } from 'react-router-dom';
 import UserConnectedComponent from '../../bloc/UserConnectedComponent';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const HeaderComponent = () => {
   useEffect(() => {
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (window.location.pathname === '/') {
-      metaThemeColor.content = '#085835';
+      Theme.changeThemeColor(Theme.primary);
     } else if (window.location.pathname !== '/') {
-      metaThemeColor.content = '#12002b';
+      Theme.changeThemeColor(Theme.secondary);
     }
   }, []);
-  const isProdGithubPages = process.env.REACT_APP_ENV === 'gh-pages' ? `/argent-bank` : ``;
-  const basePath = isProdGithubPages ? `/argent-bank` : ``;
-  const isConnected = true;
+
+  const profileUser = useSelector(selectInfosUser);
+  const isConnected = useSelector(selectUserIsConnected);
+
+  const changeThemeColor = () => {
+    Theme.changeThemeColor(Theme.primary);
+  };
 
   return (
     <nav className='main-nav'>
-      <Link to={'/'} className={'main-nav-logo'}>
+      <Link to={RouteName.home} className={'main-nav-logo'} onClick={changeThemeColor}>
         <img
           className='main-nav-logo-image'
-          src={`${basePath}/assets/images/argentBankLogo.png`}
+          src={`${RouteName.basePath}/assets/images/argentBankLogo.png`}
           alt='Argent Bank Logo'
         />
         <h1 className='sr-only'>Argent Bank</h1>
       </Link>
       {isConnected ? (
-        <UserConnectedComponent user={{ firstname: `Tony` }} />
+        <UserConnectedComponent user={{ id: profileUser.id, firstName: profileUser.firstName }} />
       ) : (
         <AuthenticationComponent />
       )}

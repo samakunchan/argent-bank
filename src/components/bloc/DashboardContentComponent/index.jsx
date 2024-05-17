@@ -1,16 +1,8 @@
 import './index.scss';
 
-const DashboardPage = () => {
+const DashboardContentComponent = () => {
   return (
-    <main className='main bg-dark'>
-      <div className='header'>
-        <h1>
-          Welcome back
-          <br />
-          Tony Jarvis!
-        </h1>
-        <button className='edit-button'>Edit Name</button>
-      </div>
+    <>
       <h2 className='sr-only'>Accounts</h2>
       <section className='account'>
         <div className='account-content-wrapper'>
@@ -42,8 +34,8 @@ const DashboardPage = () => {
           <button className='transaction-button'>View transactions</button>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 
-export default DashboardPage;
+export default DashboardContentComponent;
