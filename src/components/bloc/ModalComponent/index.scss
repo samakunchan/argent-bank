@@ -1,0 +1,23 @@
+@use "../../../styles/abstracts";
+
+.modal {
+  position: absolute;
+  background: white;
+  color: abstracts.$dark;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  box-shadow: 1px 1px 1px abstracts.$dark;
+  min-width: 250px;
+  padding: 1.5em;
+  .modal-content{
+    position: relative;
+    .close {
+      position: absolute;
+      right: 0;
+      top: -35px;
+      font-size: 2em;
+      cursor: pointer;
+    }
+  }
+}

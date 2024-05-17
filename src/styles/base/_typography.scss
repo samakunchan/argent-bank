@@ -1,0 +1,28 @@
+@use "../abstracts";
+
+#root {
+  font-family: abstracts.$fontAvenir;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: abstracts.$secondary;
+}
+
+code {
+  font-family: abstracts.$fontMSourceCodePro;
+}
+
+.main-nav {
+  a {
+    font-weight: bold;
+  }
+  .main-nav-item {
+    text-decoration: none;
+    margin-right: 0.5rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
